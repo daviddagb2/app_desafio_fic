@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('communes', function (Blueprint $table) {
+        Schema::create('document_assignments', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->foreignId('document_id')->constrained('documents');
+            $table->foreignId('commune_id')->constrained('communes');
+            $table->foreignId('industry_sector_id')->constrained('industry_sectors');
             $table->timestamps();
         });
     }
@@ -23,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('communes');
+        Schema::dropIfExists('document_assignments');
     }
 };

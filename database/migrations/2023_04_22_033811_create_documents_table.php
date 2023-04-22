@@ -15,8 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('description')->nullable();
-            $table->foreignId('commune_id')->constrained('communes');
-            $table->foreignId('industry_sector_id')->constrained('industry_sectors');
             $table->boolean('enabled')->default(true);
             $table->timestamps();
         });
