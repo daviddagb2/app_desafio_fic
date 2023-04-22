@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('entrepreneur_documents', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('entrepreneur_id')->constrained('entrepreneurs');
+            $table->foreignId('document_id')->constrained('entrepreneurs');
+            $table->boolean('presented')->default(true);
             $table->timestamps();
         });
     }
