@@ -5,14 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class EntrepreneurDocument extends Model
+class DocumentAssignment extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'entrepreneur_id',
-        'document_assignment_id',
-        'presented'
+        'document_id',
+        'commune_id',
+        'industry_sector_id',
     ];
-
 }

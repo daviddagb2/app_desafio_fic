@@ -12,8 +12,6 @@ class Document extends Model
     protected $fillable = [
         'name',
         'description',
-        'commune_id',
-        'industry_sector_id',
         'enabled'
     ];
 

@@ -11,7 +11,6 @@ class Commune extends Model
 
     protected $fillable = [
         'name',
-        'region'
     ];
 
 }
