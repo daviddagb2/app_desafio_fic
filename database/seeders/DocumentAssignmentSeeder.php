@@ -41,10 +41,7 @@ class DocumentAssignmentSeeder extends Seeder
         $ind_minimarket = IndustrySector::where('name', 'Minimarket')->first();
         $ind_electronica = IndustrySector::where('name', 'Electrónica')->first();
 
-
-
         // Document Assignments
-
         //Las Condes
         //Minimarket
         DocumentAssignment::create([
@@ -90,7 +87,6 @@ class DocumentAssignmentSeeder extends Seeder
             'commune_id' => $com_las_condes->id,
             'industry_sector_id' => $ind_electronica->id,
         ]);
-
 
         //Puente Alto
         //Minimarket
@@ -143,7 +139,6 @@ class DocumentAssignmentSeeder extends Seeder
             'commune_id' => $com_puente_alto->id,
             'industry_sector_id' => $ind_electronica->id,
         ]);
-
 
         //La Florida
         //Minimarket
@@ -202,7 +197,6 @@ class DocumentAssignmentSeeder extends Seeder
             'commune_id' => $com_la_florida->id,
             'industry_sector_id' => $ind_electronica->id,
         ]);
-
 
     }
 }
