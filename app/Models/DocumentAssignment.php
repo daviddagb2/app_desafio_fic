@@ -14,4 +14,19 @@ class DocumentAssignment extends Model
         'commune_id',
         'industry_sector_id',
     ];
+
+    public function document()
+    {
+        return $this->belongsTo(Document::class);
+    }
+
+    public function commune()
+    {
+        return $this->belongsTo(Commune::class);
+    }
+
+    public function industrySector()
+    {
+        return $this->belongsTo(IndustrySector::class);
+    }
 }

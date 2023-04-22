@@ -18,4 +18,19 @@ class Entrepreneur extends Model
         'industry_sector_id'
     ];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function commune()
+    {
+        return $this->belongsTo(Commune::class);
+    }
+
+    public function industrySector()
+    {
+        return $this->belongsTo(IndustrySector::class);
+    }
+
 }
