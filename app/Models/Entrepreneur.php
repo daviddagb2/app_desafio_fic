@@ -33,4 +33,14 @@ class Entrepreneur extends Model
         return $this->belongsTo(IndustrySector::class);
     }
 
+    public function documents()
+    {
+        return $this->belongsToMany(Document::class, 'document_assignments');
+    }
+
+    public function documentAssignments()
+    {
+        return $this->hasMany(DocumentAssignment::class);
+    }
+
 }

@@ -13,4 +13,15 @@ class IndustrySector extends Model
         'name',
         'description'
     ];
+
+    public function entrepreneurs()
+    {
+        return $this->hasMany(Entrepreneur::class);
+    }
+
+    public function documentAssignments()
+    {
+        return $this->hasMany(DocumentAssignment::class);
+    }
+
 }

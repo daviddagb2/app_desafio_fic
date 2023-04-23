@@ -15,4 +15,15 @@ class EntrepreneurDocument extends Model
         'presented'
     ];
 
+    public function entrepreneur()
+    {
+        return $this->belongsTo(Entrepreneur::class);
+    }
+
+    public function documentAssignment()
+    {
+        return $this->belongsTo(DocumentAssignment::class);
+    }
+
+
 }
