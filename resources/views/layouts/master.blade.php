@@ -8,8 +8,8 @@
         <title>FIC - @yield('title')</title>
 
         <!-- Scripts -->
-        @vite(['resources/css/dashboard.css', 'resources/js/home.js'])
-        @vite(['resources/sass/home.scss'])
+        @vite('resources/js/home.js')
+
     </head>
     <body class="font-sans antialiased">
 
