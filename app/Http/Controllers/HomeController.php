@@ -16,14 +16,14 @@ class HomeController extends Controller
     {
         $user = auth()->user();
         $profile = $user->entrepreneur;
+        $documentList = null;
 
-        
-        $documentList = DocumentAssignment::where('commune_id', $profile->commune_id)
-                                            ->where('industry_sector_id', $profile->industry_sector_id)
-                                            ->with('document')
-                                            ->get();
-
-       // dd($documentList[0]->document->name);
+        if($profile){
+            $documentList = DocumentAssignment::where('commune_id', $profile->commune_id)
+            ->where('industry_sector_id', $profile->industry_sector_id)
+            ->with('document')
+            ->get();
+        }
 
         return view('home', compact('user', 'profile', 'documentList'));
     }
