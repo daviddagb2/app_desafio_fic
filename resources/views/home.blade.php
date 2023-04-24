@@ -81,7 +81,7 @@
             <div class="text-center">
               
 
-            <h3>Para el rubro {{ $profile->industrySector->name }} en la comuna {{ $profile->commune->name }} se requieren los siguients documentos:</h3>
+            <h3>Para el rubro {{ $profile->industrySector->name }} en la comuna {{ $profile->commune->name }} se requieren los siguientes documentos:</h3>
             <ul class="list-group">
 
               @foreach ($documentList as $doc)

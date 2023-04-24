@@ -71,6 +71,10 @@ class EntrepreneurController extends Controller
     {
         $user = auth()->user();
         $profile = $user->entrepreneur;
+        
+        if($profile){
+            return redirect()->route('getstarted');
+        }
 
         $communesQuery = Commune::all();
         $communes = CommuneListResource::collection($communesQuery);
