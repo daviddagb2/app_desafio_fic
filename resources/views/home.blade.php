@@ -20,7 +20,7 @@
     <h2 class="display-5 fw-bold titleconfig">{{ __('We have detected that you have not yet configured your entrepreneur profile')}}</h2>
     <div class="col-lg-6 mx-auto">
       <p class="lead mb-4">
-        {{  __('You haven't set up your entrepreneur profile yet! Complete your information to have access to all the tools and resources we offer.') }}
+        {{  __('You haven\'t set up your entrepreneur profile yet! Complete your information to have access to all the tools and resources we offer.') }}
       </p>
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
         <a href="{{ URL::route('getstarted'); }}" class="btn btn-primary btn-lg px-4 gap-3">{{ __('Complete profile') }}</a>

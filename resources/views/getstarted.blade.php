@@ -17,31 +17,31 @@
         <form method="POST" action="/getstarted">
             @csrf
             <x-gs-form-input :type="'text'" 
-                        :message="'Ingrese el nombre de su emprendimiento'" 
+                        :message="__('Enter the name of your business')"  
                         :name="'name'"
-                        :label="'Emprendimiento'"
+                        :label="__('Entrepreneurship')"
                         :error="$errors->first('name')" 
                         :value="old('name')" />
 
             <x-gs-form-input :type="'text'" 
-                        :message="'Ingrese el teléfono'" 
+                        :message="__('Enter you phone')" 
                         :name="'phone'"
-                        :label="'Teléfono'"
+                        :label="__('Phone')"
                         :error="$errors->first('phone')"
                         :value="old('phone')" />
 
             <x-gs-form-input :type="'text'" 
-                        :message="'Ingrese la dirección'" 
+                        :message="__('Enter you address')" 
                         :name="'address'"
-                        :label="'Dirección'"
+                        :label="__('Address')"
                         :error="$errors->first('address')"
                         :value="old('address')" />
 
             <div class="mb-3">
                 {{ old('industry_sector_id') }}
-                <label for="selectIndustrySector" class="form-label">Cuál es el rubro del emprendimiento</label>
+                <label for="selectIndustrySector" class="form-label">{{ __('What is the business sector?') }}</label>
                 <select class="form-select {{ empty($errors->first('industry_sector_id')) ? '' : ' is-invalid' }}" id="selectIndustrySector" name="industry_sector_id">
-                    <option selected disabled>selecciona un rubro</option>
+                    <option selected disabled>{{ __('Select an Industry sector') }}</option>
                     @foreach ($industries as $com)
                         <option value="{{ $com->id }}"
                             @if(old('industry_sector_id') == $com->id)
@@ -58,9 +58,9 @@
             </div>
 
             <div class="mb-3">
-                <label for="selectComuna" class="form-label">¿Cuál es la comuna en la que se emplaza?</label>
+                <label for="selectComuna" class="form-label">{{ __('What is the commune in which it is located?') }}</label>
                 <select class="form-select  {{ empty($errors->first('commune_id')) ? '' : ' is-invalid' }}" id="selectComuna" name="commune_id">
-                    <option selected disabled>selecciona una comuna</option>
+                    <option selected disabled>{{ __('Select a commune') }}</option>
                     @foreach ($communes as $com)
                         <option value="{{ $com->id }}" 
                             @if(old('commune_id') == $com->id)
