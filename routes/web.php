@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\GetStartedController;
+use App\Http\Controllers\EntrepreneurController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,17 +20,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/*Route::get('/dashboard', function () {
-    //return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');*/
-
-
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
 });
-
-
-
 
 Route::middleware('auth')->group(function () {
 
@@ -41,8 +33,10 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/getstarted', [GetStartedController::class, 'index'])->name('getstarted');
-    Route::post('/getstarted', [GetStartedController::class, 'store'])->name('getstarted_store');
+    Route::get('/entrepreneur', [EntrepreneurController::class, 'show'])->name('entrepreneur.show');
+    Route::get('/getstarted', [EntrepreneurController::class, 'index'])->name('getstarted');
+    Route::post('/getstarted', [EntrepreneurController::class, 'store'])->name('getstarted_store');
+    Route::post('/entrepreneur', [EntrepreneurController::class, 'update'])->name('entrepreneur.update');
 
 });
 

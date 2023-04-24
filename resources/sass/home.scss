@@ -33,6 +33,7 @@
         font-size: 22px;
         font-weight: bold;
     }
+
 }
 
 .getstarted_section{
@@ -59,3 +60,41 @@
         }
     }
 }
+
+
+
+
+
+$color-fondo-paso: #5b9ad5;
+$color-borde-paso: white;
+
+
+.step {
+    text-align: center;
+    
+    .step-number {
+      font-size: 2rem;
+      font-weight: bold;
+      color: $color-fondo-paso;
+      margin-bottom: 0.5rem;
+    }
+    
+    .step-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    
+    .step-description {
+      font-size: 1rem;
+      color: #6c757d;
+    }
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-size: 1.2rem;
+    padding: 0.75rem 2rem;
+  }
+  

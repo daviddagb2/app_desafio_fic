@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-
+use App\Models\DocumentAssignment;
+use App\Models\Document;
 
 class HomeController extends Controller
 {
@@ -16,7 +17,15 @@ class HomeController extends Controller
         $user = auth()->user();
         $profile = $user->entrepreneur;
 
-        return view('home', compact('user', 'profile'));
+        
+        $documentList = DocumentAssignment::where('commune_id', $profile->commune_id)
+                                            ->where('industry_sector_id', $profile->industry_sector_id)
+                                            ->with('document')
+                                            ->get();
+
+       // dd($documentList[0]->document->name);
+
+        return view('home', compact('user', 'profile', 'documentList'));
     }
 
     /**
