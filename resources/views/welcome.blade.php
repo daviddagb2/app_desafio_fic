@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>{{ __('FIC Project')}}</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -18,7 +18,7 @@
             <!-- Navigation-->
             <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
                 <div class="container px-5">
-                    <a class="navbar-brand" href="{{ url('/') }}"><span class="fw-bolder text-primary">Proyecto FIC</span></a>
+                    <a class="navbar-brand" href="{{ url('/') }}"><span class="fw-bolder text-primary">{{ __('FIC Project')}}</span></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                    
                 </div>
@@ -30,11 +30,11 @@
                         <div class="col-xxl-5">
                             <!-- Header text content-->
                             <div class="text-center text-xxl-start">
-                                <div class="fs-3 fw-light text-muted">¿Quieres iniciar tu emprendimiento?</div>
-                                <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">Registrate y pon en marcha tu Negocio</span></h1>
+                                <div class="fs-3 fw-light text-muted">{{ __('Do you want to start your business?')}}</div>
+                                <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">{{ __('Sign up and start your business')}}</span></h1>
                                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
-                                    <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="{{ url('/register') }}">Registro</a>
-                                    <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="{{ url('/login') }}">Iniciar sesión</a>
+                                    <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="{{ url('/register') }}">{{ __('Register')}}</a>
+                                    <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="{{ url('/login') }}">{{ __('Log in')}}</a>
                                 </div>
                             </div>
                         </div>
@@ -168,10 +168,10 @@
                     <div class="row gx-5 justify-content-center">
                         <div class="col-xxl-8">
                             <div class="text-center my-5">
-                                <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">Acerca del proyecto</span></h2>
-                                <p class="lead fw-light mb-4">Convierte tus ideas en realidad con nuestro sitio web para emprendedores</p>
+                                <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">{{ __('About the project')}}</span></h2>
+                                <p class="lead fw-light mb-4">{{ __('Turn your ideas into reality with our website for entrepreneurs')}}</p>
                                 <p class="text-muted">
-                                Únete a nuestra comunidad de emprendedores y lleva tu negocio al siguiente nivel. Ofrecemos herramientas y recursos para ayudarte a alcanzar tus metas. Regístrate hoy y comienza a hacer crecer tu negocio
+                                {{ __('Join our community of entrepreneurs and take your business to the next level. We offer tools and resources to help you achieve your goals. Sign up today and start growing your business') }}
                                 </p>
                             </div>
                         </div>
@@ -183,7 +183,7 @@
         <footer class="bg-white py-4 mt-auto">
             <div class="container px-5">
                 <div class="row align-items-center ">
-                    <div class="col-md-12"><div class="small m-0 text-center">Copyright &copy; Proyecto FIC 2023</div></div>
+                    <div class="col-md-12"><div class="small m-0 text-center">Copyright &copy; {{ __('FIC Project') }} 2023</div></div>
                     
                 </div>
             </div>
