@@ -74,6 +74,12 @@ Los documentos estan enlazados por medio de la tabla DocumentAssigment en la cua
 Se creo una tabla EntrepreneurDocument para validar en un futuro que un Emprendedor suba la documentación solicitada al sitio.
 
 
+## Base de datos
+
+Si deseas instalar directamente la base de datos puedes encontrarla en el repositorio.
+
+- [https://github.com/daviddagb2/app_desafio_fic/blob/master/Dump20230423.sql](https://github.com/daviddagb2/app_desafio_fic/blob/master/Dump20230423.sql)
+
 
 
 ## Contact me
