@@ -6,6 +6,12 @@ El equipo del proyecto FIC, necesita desarrollar un sistema que permita informar
 Para resolver esta problematica se ha creado un pequeño sistema de registro de emprendedores en el cual se les brindará información relevante sobre sus negocios y como empezar.
 
 
+## Sitio web en Vivo
+
+Este demo puede ser consultado en la siguiente URL:
+
+- [https://desafiofic.gonzalezblanchard.com/](https://desafiofic.gonzalezblanchard.com/)
+
 
 ## Variables de entorno
 
