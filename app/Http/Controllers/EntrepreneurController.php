@@ -72,7 +72,7 @@ class EntrepreneurController extends Controller
         $user = auth()->user();
         $profile = $user->entrepreneur;
         
-        if($profile){
+        if(!$profile){
             return redirect()->route('getstarted');
         }
 
