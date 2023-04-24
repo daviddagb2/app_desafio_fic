@@ -66,6 +66,7 @@ Para representar las entidades de este proyecto se diseño el siguiente diagrama
 
 
 ![App Screenshot](https://app_desafio_fic.test/img/DiagramaFIC.png)
+https://app_desafio_fic.test/img/DiagramaFIC.png
 
 La idea es que un usuario (user) pueda tener un perfil de emprendedor, o no en caso de ser un admin. Asi mismo se crearon tablas catálogo para IndustrySector (Rubro), Communes (Comunas) y Documents (Documentos). 
 
