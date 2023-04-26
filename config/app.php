@@ -186,6 +186,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+        'Lang' => Illuminate\Support\Facades\Lang::class,
     ])->toArray(),
 
 ];

@@ -7,7 +7,7 @@
 
 @component('components.titlefic')
     @slot('title')
-        Emprendimiento
+        {{ __('Entrepreneurship') }}
     @endslot
 @endcomponent
 
@@ -84,7 +84,7 @@
 
             <div class="d-grid gap-2">
             <button type="submit" class="btn btn-outline-primary btn-lg">
-                Actualizar
+                {{ __('Update') }}
             </button>
             </div>
             

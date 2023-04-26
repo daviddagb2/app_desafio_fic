@@ -59,7 +59,13 @@
     "Profile":"Perfil",
     "Log Out":"Cerrar sesión",
     "Delete":"Eliminar",
-    "Log out":"Cerrar sesión"
-
+    "Log out":"Cerrar sesión",
+    "Email Address":"Dirección de correo electrónico",
+    "Password":"Contraseña",
+    "Remember me":"Recuérdame",
+    "Forgot your password?":"¿Olvidaste tu contraseña?",
+    "Update":"Actualizar",
+    "Updated successfully":"Actualizado correctamente",
+    "'Item created successfully!": "¡Item creado correctamente!"
 
 }

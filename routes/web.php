@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EntrepreneurController;
+use App\Http\Controllers\LanguageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +24,8 @@ Route::get('/', function () {
 Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
 });
+
+Route::get('/change-language/{language}', [LanguageController::class, 'index']);
 
 Route::middleware('auth')->group(function () {
 

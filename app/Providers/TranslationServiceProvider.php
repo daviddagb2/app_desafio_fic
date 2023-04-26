@@ -14,10 +14,13 @@ class TranslationServiceProvider extends ServiceProvider
      */
     protected $langPath;
     protected $cName;
+    protected $cachelangkey = 'CACHE_LANG_DEFAULT';
+
 
     public function __construct()
     {
-        $this->langPath = resource_path("lang/" . (App::getLocale() == 'en' ? 'es' : App::getLocale()) . ".json");
+        $locale = isset($_COOKIE[$this->cachelangkey]) ? $_COOKIE[$this->cachelangkey] : App::getLocale();//dd('locale: '.$locale);
+        $this->langPath = resource_path("lang/" . ($locale == 'en' ? 'es' : $locale) . ".json");
         $this->cName = 'translations_json';
     }
 
@@ -31,11 +34,13 @@ class TranslationServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Cache::forget($this->cName);
-        Cache::rememberForever($this->cName, function () {
-            $string = file_get_contents($this->langPath);
-            $json_tmp = json_decode($string, true);
-            return json_encode($json_tmp);
-        });
+        $locale = isset($_COOKIE[$this->cachelangkey]) ? $_COOKIE[$this->cachelangkey] :null;
+        
+        if ($locale && $locale != 'en' && $locale != 'es') {
+            $this->langPath = resource_path("lang/" . $locale . ".json");
+        }
+        $string = file_get_contents($this->langPath);
+        $json_tmp = json_decode($string, true);
+        
     }
 }

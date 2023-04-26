@@ -10,6 +10,20 @@
         <!-- Scripts -->
         @vite('resources/js/home.js')
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script>
+            function changeLanguage(val) {
+                $.ajax({
+                    type: 'GET',
+                    url: '/change-language/' + val
+                }).done(function (response) {
+                    window.location.href = window.location.pathname;
+                }).fail(function (err) {
+                    console.error('Error:', err);
+                });
+            }
+        </script>
+
     </head>
     <body class="font-sans antialiased">
 

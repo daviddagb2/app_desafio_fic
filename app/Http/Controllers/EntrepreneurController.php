@@ -114,7 +114,7 @@ class EntrepreneurController extends Controller
                 'industry_sector_id' => $requestData['industry_sector_id'],
             ]);
 
-            return back()->with('success','Actualizado correctamente');
+            return back()->with('success','Updated successfully');
 
         }
 
