@@ -19,13 +19,13 @@
         <div class="container">
           <div class="row">
           
-            <div class="col-md-9">
+            <div class="col-md-10 mb-2">
             {{ __('List of entrepreneurships') }}
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-2">
               <div class="d-grid gap-2">
-                <a href="{{ URL::route('entrepreneur'); }}" class="btn btn-primary btn-xs">{{ __('Create Entrepreneurship') }}</a>
+                <a href="{{ URL::route('entrepreneur'); }}" class="btn btn-primary btn-xs roundedbutton">{{ __('Create Entrepreneurship') }}</a>
               </div>
             </div>
 
@@ -44,7 +44,19 @@
           <div class="col-md-3 mb-5">
             <div class="card">
               
-              <img src="{{ url('/img/bakery.jpeg') }}" class="card-img-top" alt="{{ $item->name }}">   
+              @if($item->industrySector->name == "Pastelería")
+                <img src="{{ url('/img/pastel.png') }}" class="card-img-top" alt="{{ $item->name }}">   
+              @elseif($item->industrySector->name == "Minimarket")
+                <img src="{{ url('/img/minimarket.png') }}" class="card-img-top" alt="{{ $item->name }}">  
+              @elseif($item->industrySector->name == "Electrónica")
+                <img src="{{ url('/img/electronica.png') }}" class="card-img-top" alt="{{ $item->name }}">  
+              @else
+              <img src="{{ url('/img/youngentrepreneur.png') }}" class="card-img-top" alt="{{ $item->name }}">  
+              @endif
+              
+              
+              
+              
               <div class="card-body">
                 
                 <h5 class="card-title">{{ $item->name }}</h5>

@@ -9,7 +9,7 @@
         <div class="container">
           <div class="row">
           
-            <div class="col-md-9">
+            <div class="col-md-10 mb-2">
             {{ $entrepreneur->name }} - {{ __('Edit') }}
             </div>
 

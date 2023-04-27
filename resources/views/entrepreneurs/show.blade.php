@@ -9,13 +9,13 @@
         <div class="container">
           <div class="row">
           
-            <div class="col-md-9">
+            <div class="col-md-10 mb-2">
             {{ $entrepreneur->name }} - {{ __('Welcome to your Entrepreneur profile') }}
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-2">
               <div class="d-grid gap-2">
-                <a href="{{ url('entrepreneuredit' , [ 'id' => $entrepreneur->id ]) }}" class="btn btn-primary btn-xs">{{ __('Edit Entrepreneurship') }}</a>
+                <a href="{{ url('entrepreneuredit' , [ 'id' => $entrepreneur->id ]) }}" class="btn btn-primary btn-xs roundedbutton">{{ __('Edit Entrepreneurship') }}</a>
               </div>
             </div>
 

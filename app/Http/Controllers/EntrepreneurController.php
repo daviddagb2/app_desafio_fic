@@ -56,7 +56,7 @@ class EntrepreneurController extends Controller
             'industry_sector_id' => $requestData['industry_sector_id'],
         ]);
 
-	    return back()->with('success','Item created successfully!');
+        return redirect('/entrepreneur/' . $entrepreneur->id)->with('success','Item created successfully!');
     }
 
     /**
