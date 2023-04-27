@@ -65,7 +65,9 @@
                  - <span class="badge rounded-pill bg-success">{{ $item->industrySector->name }}</span></p>
 
                 <div class="d-grid gap-2">
-                  <a href="{{ url('/entrepreneur') }}/{{$item->id}}" class="btn btn-primary btn-xs">Ver documentación</a>
+                  <a href="{{ url('/entrepreneur') }}/{{$item->id}}" class="btn btn-primary btn-xs">
+                    {{ __('See details') }}
+                  </a>
                 </div>
 
               </div>
