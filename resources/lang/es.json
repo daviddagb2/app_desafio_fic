@@ -66,6 +66,16 @@
     "Forgot your password?":"¿Olvidaste tu contraseña?",
     "Update":"Actualizar",
     "Updated successfully":"Actualizado correctamente",
-    "'Item created successfully!": "¡Item creado correctamente!"
+    "'Item created successfully!": "¡Item creado correctamente!",
+    "We have detected that you have not configured any entrepreneurship": "Hemos detectado que no has configurado ningún emprendimiento",
+    "Create Entrepreneurship": "Crear emprendimiento",
+    "Ready to take the first step on your path to success? Join our entrepreneurship line and turn your ideas into reality.":"¿Listo para dar el primer paso en tu camino al éxito? Únete a nuestra línea de emprendimiento y convierte tus ideas en realidad.",
+    "List of entrepreneurships":"Listado de emprendimientos",
+    "Add new": "Agregar nuevo",
+    "You must go to the municipality of your commune and present the following documents":"Debes dirigirte al municipio de tu comuna y presentar los siguientes documentos",
+    "Edit":"Editar",
+    "Edit Entrepreneurship":"Editar emprendimiento",
+    "Spanish":"Español",
+    "English":"Inglés"
 
 }

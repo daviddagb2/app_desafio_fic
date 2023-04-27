@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Entrepreneur;
 use App\Models\Commune;
+use App\Models\DocumentAssignment;
 use App\Models\IndustrySector;
 use App\Http\Resources\CommuneListResource;
 use App\Http\Resources\IndustrySectorListResource;
@@ -18,17 +19,11 @@ class EntrepreneurController extends Controller
     public function index()
     {
         $user = auth()->user();
-        $profile = $user->entrepreneur;
-        
-        if($profile){
-            return redirect()->route('home');
-        }
-
         $communesQuery = Commune::all();
         $communes = CommuneListResource::collection($communesQuery);
         $industryQuery = IndustrySector::all();
         $industries = IndustrySectorListResource::collection($industryQuery);
-        return view('getstarted', compact('user', 'profile', 'communes', 'industries'));
+        return view('entrepreneurs.add', compact('user', 'communes', 'industries'));
     }
 
 
@@ -67,26 +62,56 @@ class EntrepreneurController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Request $request)
+    public function show(Request $request, $id)
     {
         $user = auth()->user();
-        $profile = $user->entrepreneur;
-        
-        if(!$profile){
-            return redirect()->route('getstarted');
-        }
-
         $communesQuery = Commune::all();
         $communes = CommuneListResource::collection($communesQuery);
         $industryQuery = IndustrySector::all();
         $industries = IndustrySectorListResource::collection($industryQuery);
-        return view('showentrepreneur', compact('user', 'profile', 'communes', 'industries'));
+
+        $entrepreneur = Entrepreneur::findOrFail($id);
+
+
+         if($entrepreneur){
+            $documentList = DocumentAssignment::where('commune_id', $entrepreneur->commune_id)
+            ->where('industry_sector_id', $entrepreneur->industry_sector_id)
+            ->with('document')
+            ->get();
+        }
+
+        return view('entrepreneurs.edit', compact('user', 'entrepreneur', 'communes', 'industries', 'documentList'));
+    }
+
+
+     /**
+     * Display the specified resource.
+     */
+    public function documentInfo(Request $request, $id)
+    {
+        $user = auth()->user();
+        $communesQuery = Commune::all();
+        $communes = CommuneListResource::collection($communesQuery);
+        $industryQuery = IndustrySector::all();
+        $industries = IndustrySectorListResource::collection($industryQuery);
+
+        $entrepreneur = Entrepreneur::findOrFail($id);
+
+
+         if($entrepreneur){
+            $documentList = DocumentAssignment::where('commune_id', $entrepreneur->commune_id)
+            ->where('industry_sector_id', $entrepreneur->industry_sector_id)
+            ->with('document')
+            ->get();
+        }
+
+        return view('entrepreneurs.show', compact('user', 'entrepreneur', 'communes', 'industries', 'documentList'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
         $requestData = $request->all();
         $validator = Validator::make($requestData, [
@@ -102,22 +127,16 @@ class EntrepreneurController extends Controller
         }
 
         $user = auth()->user();
-        $profile = $user->entrepreneur;
 
-        if($profile){
+        Entrepreneur::where('id', $id)->update([
+            'name' => $requestData['name'],
+            'phone' => $requestData['phone'],
+            'address' => $requestData['address'],
+            'commune_id' => $requestData['commune_id'],
+            'industry_sector_id' => $requestData['industry_sector_id'],
+        ]);
 
-            $profile->update([
-                'name' => $requestData['name'],
-                'phone' => $requestData['phone'],
-                'address' => $requestData['address'],
-                'commune_id' => $requestData['commune_id'],
-                'industry_sector_id' => $requestData['industry_sector_id'],
-            ]);
-
-            return back()->with('success','Updated successfully');
-
-        }
-
+        return redirect('/entrepreneur/' . $id)->with('success','Updated successfully');
     }
 
 } 

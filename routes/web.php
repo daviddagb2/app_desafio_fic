@@ -36,10 +36,15 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/entrepreneur', [EntrepreneurController::class, 'show'])->name('entrepreneur.show');
-    Route::get('/getstarted', [EntrepreneurController::class, 'index'])->name('getstarted');
-    Route::post('/getstarted', [EntrepreneurController::class, 'store'])->name('getstarted_store');
-    Route::post('/entrepreneur', [EntrepreneurController::class, 'update'])->name('entrepreneur.update');
+   
+    
+    Route::get('/entrepreneur', [EntrepreneurController::class, 'index'])->name('entrepreneur');
+    Route::post('/entrepreneur', [EntrepreneurController::class, 'store'])->name('entrepreneur.store');
+    Route::get('/entrepreneur/{id}', [EntrepreneurController::class, 'documentInfo'])->name('entrepreneur.show');
+
+
+    Route::get('/entrepreneuredit/{id}', [EntrepreneurController::class, 'show'])->name('entrepreneur.edit');
+    Route::post('/entrepreneuredit/{id}', [EntrepreneurController::class, 'update'])->name('entrepreneur.update');
 
 });
 

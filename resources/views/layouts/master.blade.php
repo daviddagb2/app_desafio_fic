@@ -7,6 +7,8 @@
 
         <title>FIC - @yield('title')</title>
 
+        @include('home.favicon')
+
         <!-- Scripts -->
         @vite('resources/js/home.js')
 
@@ -23,29 +25,37 @@
                 });
             }
         </script>
-
     </head>
-    <body class="font-sans antialiased">
+    <body>
 
-        @include('home.header')
 
-        <div class="container-fluid">
-            <div class="row">
-                
+    <!-- Main wrapper -->
+    <div class="main-wrapper">
+       
+        <div class="d-flex flex-row vh-100">
+       
+            <div class="vh-100">
                 @include('home.sidebar')
+            </div>
 
-                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-
-                    @include('components.gs-flash-message')
-
-                    <br/>
-
-                    @yield('content')
+            <div class="flex-fill vh-100">
+            
+            
+                <div class="spacertop"></div>
+                
+                <main class="contentmain">
+                    @include('home.header')
+                    <div class="pb-5 ps-5 pe-5">
+                        @include('components.gs-flash-message')
+                        <br/>
+                        @yield('content')
+                    </div>
                 </main>
-
-
             </div>
         </div>
+      
+    </div>
+    <!-- End Main wrapper -->     
 
     </body>
 </html>

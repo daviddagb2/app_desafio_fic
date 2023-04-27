@@ -13,7 +13,7 @@
 
 <div class="getstarted_section">
 
-    <div class="formgetstarted">
+    <div class="formgetstarted customform shadow-sm p-4 mb-5 bg-body rounded">
         <form method="POST" action="/entrepreneur">
             @csrf
 
@@ -23,21 +23,21 @@
                         :name="'name'"
                         :label="__('Entrepreneurship')"
                         :error="$errors->first('name')" 
-                        :value="$profile->name" />
+                        :value="$entrepreneur->name" />
 
             <x-gs-form-input :type="'text'" 
                         :message="__('Enter you phone')" 
                         :name="'phone'"
                         :label="__('Phone')"
                         :error="$errors->first('phone')"
-                        :value="$profile->phone" />
+                        :value="$entrepreneur->phone" />
 
             <x-gs-form-input :type="'text'" 
                         :message="__('Enter you address')" 
                         :name="'address'"
                         :label="__('Address')"
                         :error="$errors->first('address')"
-                        :value="$profile->address" />
+                        :value="$entrepreneur->address" />
 
 
            
@@ -48,7 +48,7 @@
                 <option selected disabled>{{ __('Select an Industry sector') }}</option>
                     @foreach ($industries as $com)
                         <option value="{{ $com->id }}"
-                            @if($profile->industry_sector_id == $com->id)
+                            @if($entrepreneur->industry_sector_id == $com->id)
                                 selected
                             @endif 
                             >{{$com->name}}</option>
@@ -67,7 +67,7 @@
                     <option selected disabled>{{ __('Select a commune') }}</option>
                     @foreach ($communes as $com)
                         <option value="{{ $com->id }}" 
-                            @if($profile->commune_id == $com->id)
+                            @if($entrepreneur->commune_id == $com->id)
                                 selected
                             @endif 
                             >{{$com->name}}</option>

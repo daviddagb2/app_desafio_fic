@@ -5,12 +5,27 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>{{ __('FIC Project')}}</title>
-
+        @include('home.favicon')
+        
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
 
         @vite(['resources/sass/welcome.scss'])
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script>
+            function changeLanguage(val) {
+                $.ajax({
+                    type: 'GET',
+                    url: '/change-language/' + val
+                }).done(function (response) {
+                    window.location.href = window.location.pathname;
+                }).fail(function (err) {
+                    console.error('Error:', err);
+                });
+            }
+        </script>
     </head>
    
     <body class="d-flex flex-column h-100">
@@ -18,10 +33,19 @@
             <!-- Navigation-->
             <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
                 <div class="container px-5">
-                    <a class="navbar-brand" href="{{ url('/') }}"><span class="fw-bolder text-primary">{{ __('FIC Project')}}</span></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                   
+
+                    <div class="col-10">
+                        <a class="navbar-brand" href="{{ url('/') }}">
+                            <img src="{{ url('/img/logo.png') }}" alt="FIC" width="150" height="60" />
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    </div>
+                    <div class="col"> 
+                        @include('home.language')
+                    </div>
+
                 </div>
+
             </nav>
             <!-- Header-->
             <header class="py-5">
@@ -190,7 +214,7 @@
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="js/scripts.js"></script>
+
     </body>
 
 </html>

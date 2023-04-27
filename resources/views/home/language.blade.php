@@ -1,14 +1,11 @@
-<form class="form-inline my-2 my-lg-0">
+<form class="d-flex justify-content-end">
     <div class="custom-select custom-select-lg mb-3">
-    <span style="color: white;">@lang("Language"):</span>
-
-        <label class="custom-select custom-select-lg mb-3" for="slct"></label>
-        <select id="slct" v-model="languageSelected" onchange="changeLanguage(this.value);" selected="es">
+        <select id="slct" v-model="languageSelected" onchange="changeLanguage(this.value);" class="form-select form-select-lg" selected="es">
             <option value="es" @if(App::getLocale() == 'es') selected="selected" @endif>
-                @lang("Spanish")
+               {{  __('Spanish') }}
             </option>
             <option value="en" @if(App::getLocale() == 'en') selected="selected" @endif>
-                @lang("English")
+                {{  __('English') }}
             </option>
         </select>
     </div>

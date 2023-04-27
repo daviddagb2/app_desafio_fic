@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\DocumentAssignment;
 use App\Models\Document;
+use App\Models\Entrepreneur;
 
 class HomeController extends Controller
 {
@@ -15,17 +16,10 @@ class HomeController extends Controller
     public function index()
     {
         $user = auth()->user();
-        $profile = $user->entrepreneur;
         $documentList = null;
 
-        if($profile){
-            $documentList = DocumentAssignment::where('commune_id', $profile->commune_id)
-            ->where('industry_sector_id', $profile->industry_sector_id)
-            ->with('document')
-            ->get();
-        }
-
-        return view('home', compact('user', 'profile', 'documentList'));
+        $entrepreneurs = Entrepreneur::where('user_id', $user->id)->get();
+        return view('home', compact('user', 'entrepreneurs', 'documentList'));
     }
 
     /**
