@@ -1,4 +1,5 @@
-<section>
+<section class="customform2 shadow-sm p-4 mb-3 bg-body rounded">
+
     <header>
         <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
             {{ __('Update Password') }}
@@ -32,7 +33,12 @@
         </div>
 
         <div class="flex items-center gap-4">
-            <x-primary-button>{{ __('Save') }}</x-primary-button>
+                
+                <div class="d-grid gap-2 pt-3 pb-2">
+                    <button type="submit" class="btn btn-primary btn-xs">
+                        {{ __('Save') }}
+                    </button>
+                </div>
 
             @if (session('status') === 'password-updated')
                 <p

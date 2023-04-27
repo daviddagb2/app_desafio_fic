@@ -25,13 +25,16 @@
                 @csrf
                 @method('patch')
 
-                <div>
+                <div class="col-12">
                     <x-input-label for="name" :value="__('Name')" />
+                   </div>
+                
+                <div class="col-12">
                     <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
                     <x-input-error class="mt-2" :messages="$errors->get('name')" />
                 </div>
 
-                <div>
+                <div class="col-12">
                     <x-input-label for="email" :value="__('Email')" />
                     <x-text-input id="email" name="email" type="email" class="mt-1 block w-full" :value="old('email', $user->email)" required autocomplete="username" />
                     <x-input-error class="mt-2" :messages="$errors->get('email')" />
@@ -57,9 +60,14 @@
 
                 <div class="flex items-center gap-4">
                     
+
+                <div class="d-grid gap-2 pt-3 pb-2">
                     <button type="submit" class="btn btn-primary btn-xs">
                         {{ __('Save') }}
                     </button>
+                </div>
+
+                    
 
 
                     @if (session('status') === 'profile-updated')
